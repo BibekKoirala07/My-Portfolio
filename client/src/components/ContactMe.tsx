@@ -2,8 +2,14 @@ import React, { FormEvent, useState } from "react";
 import WithComponentHeader from "./WithComponentHeader";
 import { AiFillEnvironment, AiFillMail, AiFillPhone } from "react-icons/ai";
 import Toast from "./Toast";
+import { IconBaseProps } from "react-icons";
 
-const contactDetails = [
+interface ContactDetail {
+  icon: React.ReactElement<IconBaseProps>;
+  text: string;
+}
+
+const contactDetails: ContactDetail[] = [
   {
     icon: <AiFillMail size={30} className="text-gray-500" />,
     text: "www.koiralabibek2058@gmail.com",

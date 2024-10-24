@@ -1,4 +1,3 @@
-import React from "react";
 import WithComponentHeader from "./WithComponentHeader";
 import { FaCheck } from "react-icons/fa";
 
