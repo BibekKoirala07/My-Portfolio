@@ -1,10 +1,10 @@
-import { FormEvent, useState } from "react";
+import React, { FormEvent, useState } from "react";
 import WithComponentHeader from "./WithComponentHeader";
 import { AiFillEnvironment, AiFillMail, AiFillPhone } from "react-icons/ai";
 import Toast from "./Toast";
 
 interface ContactDetail {
-  icon: JSX.Element;
+  icon: React.ReactElement;
   text: string;
 }
 
@@ -54,7 +54,7 @@ const ContactMe: React.FC = () => {
     console.log("data", data);
     if (response.ok) {
       setToastMessage(data.message || "Message sent successfully!"); // Set success toast message
-    } else if (response.ok) {
+    } else if (!response.ok) {
       setToastMessage(
         data.message || "Failed to send message. Please try again."
       );
