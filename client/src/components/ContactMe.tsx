@@ -3,12 +3,7 @@ import WithComponentHeader from "./WithComponentHeader";
 import { AiFillEnvironment, AiFillMail, AiFillPhone } from "react-icons/ai";
 import Toast from "./Toast";
 
-interface ContactDetail {
-  icon: React.ReactElement;
-  text: string;
-}
-
-const contactDetails: ContactDetail[] = [
+const contactDetails = [
   {
     icon: <AiFillMail size={30} className="text-gray-500" />,
     text: "www.koiralabibek2058@gmail.com",

@@ -28,7 +28,7 @@ const skillsData = [
   },
 ];
 
-const MySkills: React.FC = () => {
+const MySkills = () => {
   return (
     <WithComponentHeader id="my-skills" header="MySkills">
       <div className="text-center flex items-center">
