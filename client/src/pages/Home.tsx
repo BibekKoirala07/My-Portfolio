@@ -4,7 +4,7 @@ import ContactMe from "../components/ContactMe";
 import AboutMe from "../components/AboutMe";
 import Projects from "../components/Projects";
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <div>
       <div className="min-h-[calc(100vh-64px)] flex flex-col">
