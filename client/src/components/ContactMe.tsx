@@ -2,23 +2,41 @@ import React, { FormEvent, useState } from "react";
 import WithComponentHeader from "./WithComponentHeader";
 import { AiFillEnvironment, AiFillMail, AiFillPhone } from "react-icons/ai";
 import Toast from "./Toast";
+import { IconBaseProps } from "react-icons";
 
 interface ContactDetail {
   icon: React.ReactNode;
   text: string;
 }
 
+// Create custom icon props interface that extends IconBaseProps
+interface CustomIconProps extends IconBaseProps {
+  className?: string;
+}
+
 const contactDetails: ContactDetail[] = [
   {
-    icon: <AiFillMail size={30} className="text-gray-500" />,
+    icon: (
+      <AiFillMail
+        {...({ size: 30, className: "text-gray-500" } as CustomIconProps)}
+      />
+    ),
     text: "www.koiralabibek2058@gmail.com",
   },
   {
-    icon: <AiFillPhone size={30} className="text-gray-500" />,
+    icon: (
+      <AiFillPhone
+        {...({ size: 30, className: "text-gray-500" } as CustomIconProps)}
+      />
+    ),
     text: "+9779841158113",
   },
   {
-    icon: <AiFillEnvironment size={30} className="text-gray-500" />,
+    icon: (
+      <AiFillEnvironment
+        {...({ size: 30, className: "text-gray-500" } as CustomIconProps)}
+      />
+    ),
     text: "Begnastal, Kaski-31, Nepal",
   },
 ];
