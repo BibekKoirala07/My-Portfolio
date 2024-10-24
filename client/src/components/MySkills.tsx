@@ -53,7 +53,7 @@ const MySkills = () => {
                       style={{ gridTemplateColumns: "30px 1fr" }}
                     >
                       <div className="w-fit h-fit bg-black p-1 flex justify-center items-center text-white rounded-full">
-                        <FaCheck size={10} className="" />
+                        <FaCheck size={10} />
                       </div>
                       <div className="flex flex-col items-start">
                         <span className="text-lg font-semibold text-nowrap">

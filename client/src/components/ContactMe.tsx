@@ -2,10 +2,9 @@ import React, { FormEvent, useState } from "react";
 import WithComponentHeader from "./WithComponentHeader";
 import { AiFillEnvironment, AiFillMail, AiFillPhone } from "react-icons/ai";
 import Toast from "./Toast";
-import { IconBaseProps } from "react-icons";
 
 interface ContactDetail {
-  icon: React.ReactElement<IconBaseProps>;
+  icon: React.ReactNode;
   text: string;
 }
 
