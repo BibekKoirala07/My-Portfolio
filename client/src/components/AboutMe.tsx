@@ -1,6 +1,10 @@
 import WithComponentHeader from "./WithComponentHeader";
 
 const AboutMe = () => {
+  const frontendUrl =
+    import.meta.env.NODE_ENV == "production"
+      ? import.meta.env.VITE_PROD_FRONTEND_URL
+      : import.meta.env.VITE_DEV_FRONTEND_URL;
   return (
     <WithComponentHeader id="about-me" header="About Me">
       <div className="max-w-7xl mx-auto py-8 lg:p-8">
@@ -8,7 +12,7 @@ const AboutMe = () => {
           <div className="hidden lg:block">
             <div className="relative aspect-square w-full max-w-md mx-auto">
               <img
-                src="https://portfolio-frontend-pikm.onrender.com/my-photo.jpg"
+                src={`${frontendUrl}/my-photo.jpg`}
                 alt="Professional headshot"
                 className="rounded-2xl object-cover shadow-xl h-full"
               />

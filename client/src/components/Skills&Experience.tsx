@@ -31,34 +31,34 @@ interface SkillsExperiencesProps {
 
 const skillsData: Skill[] = [
   // { name: "Flutter", color: "#54C5F8", imagePath: "/flutter.png" },
-  { name: "HTML5", color: "#E34F26", imagePath: "/html5.png" },
-  { name: "CSS3", color: "#1572B6", imagePath: "/css.png" },
+  { name: "HTML5", color: "#E34F26", imagePath: "html5.png" },
+  { name: "CSS3", color: "#1572B6", imagePath: "css.png" },
   {
     name: "JavaScript",
     color: "#F7DF1E",
-    imagePath: "/javascript.png",
+    imagePath: "javascript.png",
   },
   { name: "Node.js", color: "#339933", imagePath: "/node.png" },
   {
     name: "React JS",
     color: "#61DAFB",
-    imagePath: "/react.png",
+    imagePath: "react.png",
   },
   {
     name: "Redux",
     color: "#764ABC",
-    imagePath: "/redux.png",
+    imagePath: "redux.png",
   },
   { name: "Vue", color: "#4FC08D", imagePath: "/vue.png" },
   {
     name: "TypeScript",
     color: "#3178C6",
-    imagePath: "/typescript.png",
+    imagePath: "typescript.png",
   },
   {
     name: "GraphQL",
     color: "#E10098",
-    imagePath: "/graphql.png",
+    imagePath: "graphql.png",
   },
   { name: "Git", color: "#F05032", imagePath: "/git.png" },
 ];
@@ -72,23 +72,29 @@ const experienceData: Experience[] = [
   },
 ];
 
-const SkillCard: React.FC<SkillCardProps> = ({ skill, isColorMode }) => (
-  <div className="flex flex-col gap-1  py-3 rounded-xl bg-gray-50 items-center">
-    <div
-      className={`w-16 h-16  rounded-full flex items-center justify-center mb-2 transition-all duration-300 group-hover:shadow-lg ${
-        isColorMode ? "bg-gray-50" : "bg-gray-100"
-      }`}
-    >
-      <img
-        src={`https://portfolio-frontend-pikm.onrender.com/${skill.imagePath}`}
-        alt={skill.name}
-        className=" object-contain h-12 w-12 hover:w-14 hover:h-14 transition-all delay-150 ease-in "
-        color={skill.color}
-      />
+const SkillCard: React.FC<SkillCardProps> = ({ skill, isColorMode }) => {
+  const frontendUrl =
+    import.meta.env.NODE_ENV == "production"
+      ? import.meta.env.VITE_PROD_FRONTEND_URL
+      : import.meta.env.VITE_DEV_FRONTEND_URL;
+  return (
+    <div className="flex flex-col gap-1  py-3 rounded-xl bg-gray-50 items-center">
+      <div
+        className={`w-16 h-16  rounded-full flex items-center justify-center mb-2 transition-all duration-300 group-hover:shadow-lg ${
+          isColorMode ? "bg-gray-50" : "bg-gray-100"
+        }`}
+      >
+        <img
+          src={`${frontendUrl}/${skill.imagePath}`}
+          alt={skill.name}
+          className=" object-contain h-12 w-12 hover:w-14 hover:h-14 transition-all delay-150 ease-in "
+          color={skill.color}
+        />
+      </div>
+      <span className="text-sm text-gray-600 text-center">{skill.name}</span>
     </div>
-    <span className="text-sm text-gray-600 text-center">{skill.name}</span>
-  </div>
-);
+  );
+};
 
 const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => (
   <div
