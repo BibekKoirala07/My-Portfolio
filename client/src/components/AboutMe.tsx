@@ -2,7 +2,7 @@ import WithComponentHeader from "./WithComponentHeader";
 
 const AboutMe = () => {
   const frontendUrl =
-    import.meta.env.NODE_ENV == "production"
+    import.meta.env.VITE_NODE_ENV == "production"
       ? import.meta.env.VITE_PROD_FRONTEND_URL
       : import.meta.env.VITE_DEV_FRONTEND_URL;
   return (

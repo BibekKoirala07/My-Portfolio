@@ -1,9 +1,9 @@
 const Main = () => {
   const frontendUrl =
-    import.meta.env.NODE_ENV == "production"
+    import.meta.env.VITE_NODE_ENV == "production"
       ? import.meta.env.VITE_PROD_FRONTEND_URL
       : import.meta.env.VITE_DEV_FRONTEND_URL;
-  console.log("main", import.meta.env.NODE_ENV);
+  console.log("main", import.meta.env.VITE_NODE_ENV);
   return (
     <main className="flex-1 flex gap-7 md:gap-7  md:flex-row flex-col">
       <div className="flex-1  flex justify-center md:justify-end items-center ">
