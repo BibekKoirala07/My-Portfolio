@@ -83,6 +83,7 @@ const ContactMe: React.FC = () => {
       setEmail("");
       setMessage("");
     } catch (error: any) {
+      setLoading(false);
       setToastMessage(error.message || "Failed to send message");
     }
   };
