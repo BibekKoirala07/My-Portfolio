@@ -54,8 +54,6 @@ const ContactMe: React.FC = () => {
       ? import.meta.env.VITE_PROD_BACKEND_URL
       : import.meta.env.VITE_DEV_BACKEND_URL;
 
-  console.log("url", url);
-
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
@@ -70,7 +68,7 @@ const ContactMe: React.FC = () => {
       });
       const data = await response.json();
       setLoading(false);
-      console.log("data", data);
+
       if (response.ok) {
         setToastMessage(data.message || "Message sent successfully!"); // Set success toast message
       } else if (!response.ok) {
