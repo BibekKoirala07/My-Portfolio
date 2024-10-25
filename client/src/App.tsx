@@ -1,65 +1,35 @@
-import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import Drawer from "./components/Drawer";
-import Home from "./pages/Home";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import Project from "./pages/Project";
-import "./App.css";
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
 function App() {
-  const [theme, setTheme] = useState<"dark" | "light">("light");
-  const [drawer, setDrawer] = useState(false);
-  const [visible, setVisible] = useState(false);
-  const [backdropVisible, setBackdropVisible] = useState(false);
-
-  const handleTheme = () => {
-    setTheme((prevState: string) => (prevState === "light" ? "dark" : "light"));
-    document.documentElement.classList.toggle("dark");
-  };
-
-  useEffect(() => {
-    if (drawer) {
-      setVisible(true);
-      setBackdropVisible(true);
-    } else {
-      const timer = setTimeout(() => {
-        setVisible(false);
-        setBackdropVisible(false);
-      }, 400);
-      return () => clearTimeout(timer);
-    }
-  }, [drawer]);
+  const [count, setCount] = useState(0)
 
   return (
-    <Router>
-      <div className={theme === "dark" ? "bg-theme-dark" : "bg-theme-light"}>
-        {backdropVisible && (
-          <div
-            className={`fixed inset-0 bg-black bg-opacity-50 z-50 ${
-              drawer ? "backdrop-enter" : "backdrop-exit"
-            }`}
-            onClick={() => setDrawer(false)}
-          />
-        )}
-        {visible && <Drawer drawer={drawer} setDrawer={setDrawer} />}
-
-        <Navbar
-          drawer={drawer}
-          setDrawer={setDrawer}
-          theme={theme}
-          handleTheme={handleTheme}
-        />
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/project/:id" element={<Project />} />
-        </Routes>
-        <Footer />
+    <>
+      <div>
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
       </div>
-    </Router>
-  );
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
 }
 
-export default App;
+export default App

@@ -1,67 +1,68 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
 
-/* App.css */
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
 
-/* Add keyframes for the slide-in and slide-out animations */
-@keyframes slideIn {
-  0% {
-    transform: translateX(100%); /* Start off-screen */
-    opacity: 0; /* Start hidden */
-  }
-  100% {
-    transform: translateX(0); /* End at its position */
-    opacity: 1; /* Fully visible */
-  }
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@keyframes slideOut {
-  0% {
-    transform: translateX(0); /* Start at its position */
-    opacity: 1; /* Fully visible */
-  }
-  100% {
-    transform: translateX(100%); /* Move off-screen */
-    opacity: 0; /* Fully hidden */
-  }
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
 }
 
-/* Custom classes for animations */
-.drawer-enter {
-  animation: slideIn 0.5s forwards; /* Animate entering */
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
-.drawer-exit {
-  animation: slideOut 0.5s forwards; /* Animate exiting */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
 }
 
-/* App.css */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
 
-/* Add keyframes for the backdrop fade-in and fade-out animations */
-@keyframes backdropFadeIn {
-  0% {
-    opacity: 0; /* Start hidden */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
   }
-  100% {
-    opacity: 0.5; /* Fully visible */
+  a:hover {
+    color: #747bff;
   }
-}
-
-@keyframes backdropFadeOut {
-  0% {
-    opacity: 0.5; /* Start visible */
+  button {
+    background-color: #f9f9f9;
   }
-  100% {
-    opacity: 0; /* Fully hidden */
-  }
-}
-
-/* Custom classes for animations */
-.backdrop-enter {
-  animation: backdropFadeIn 0.5s forwards; /* Animate entering */
-}
-
-.backdrop-exit {
-  animation: backdropFadeOut 0.5s forwards; /* Animate exiting */
 }
