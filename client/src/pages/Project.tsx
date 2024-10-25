@@ -13,22 +13,24 @@ const Project = () => {
   return (
     <div className="min-h-screen flex flex-col items-center py-12 px-4">
       <div className="text-center mb-12 space-y-12 mt-12">
-        <h1 className="text-5xl font-bold mb-4">{project.title}</h1>
+        <h1 className="text-5xl font-bold mb-4 dark:text-theme-light">
+          {project.title}
+        </h1>
         <p className="text-lg text-gray-600 text-balance max-w-[700px]">
-          This page contains the case study of Dopefolio Open-Source Project
-          which includes the Project Overview, Tools Used, and Live Links to the
-          official product.
+          {project.subdescription}
         </p>
         <div className="space-x-4">
           <a
+            target="_blank"
             href={project.githubUrl}
-            className="mt-6 inline-block px-8 py-3 bg-primary-light dark:bg-primary-dark text-primary-textLight dark:text-primary-textDark"
+            className="mt-6 rounded-lg font-medium hover:opacity-75 transition-opacity  inline-block px-8 py-3 bg-primary-light dark:bg-primary-dark text-primary-textLight dark:text-primary-textDark"
           >
             Github
           </a>
           <a
+            target="_blank"
             href={project.liveDemoUrl}
-            className="mt-6 inline-block px-8 py-3 bg-primary-light dark:bg-primary-dark text-primary-textLight dark:text-primary-textDark"
+            className="mt-6 rounded-lg font-medium hover:opacity-75 transition-opacity  inline-block px-8 py-3 bg-primary-light dark:bg-primary-dark text-primary-textLight dark:text-primary-textDark"
           >
             See Live
           </a>
@@ -45,7 +47,9 @@ const Project = () => {
 
       {/* Project Overview Section */}
       <div className="w-full max-w-4xl text-left mb-16">
-        <h2 className="text-3xl font-bold mb-6">Project Overview</h2>
+        <h2 className="text-3xl font-bold mb-6 dark:text-theme-light">
+          Project Overview
+        </h2>
         <p className="text-gray-600 mb-6 leading-relaxed">
           {project.description}
         </p>
@@ -55,7 +59,9 @@ const Project = () => {
       </div>
 
       <div className="w-full max-w-4xl text-left mb-16">
-        <h2 className="text-2xl font-bold mb-6">Tools Used</h2>
+        <h2 className="text-2xl font-bold mb-6 dark:text-theme-light">
+          Tools Used
+        </h2>
         <div className="flex flex-wrap gap-4">
           {project.technologiesUsed.map((each) => {
             return (

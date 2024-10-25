@@ -34,7 +34,6 @@ function App() {
 
   return (
     <Router>
-      <div></div>
       <div className={theme === "dark" ? "bg-theme-dark" : "bg-theme-light"}>
         {backdropVisible && (
           <div

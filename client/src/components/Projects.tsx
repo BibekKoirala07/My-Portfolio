@@ -25,7 +25,7 @@ const Projects = () => {
                 <h1 className="text-2xl font-semibold ">{each.title}</h1>
                 <HashLink
                   to={"/project/" + each.id}
-                  className="px-6 p-2 rounded-lg bg-black text-white"
+                  className="px-6 hover:opacity-75 transition-opacity  p-2 rounded-lg bg-black text-white"
                 >
                   Explore
                 </HashLink>

@@ -56,7 +56,7 @@ const AboutMe = () => {
               <div className="pt-4">
                 <a
                   href="#contact-me"
-                  className="inline-flex items-center px-6 py-3 bg-primary-light dark:bg-primary-dark text-primary-textLight dark:text-primary-textDark font-medium rounded-lg  transition-colors"
+                  className="inline-flex hover:opacity-75 transition-opacity  items-center px-6 py-3 bg-primary-light dark:bg-primary-dark text-primary-textLight dark:text-primary-textDark font-medium rounded-lg "
                 >
                   Let's Work Together
                 </a>

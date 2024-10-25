@@ -98,28 +98,28 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill, isColorMode }) => {
 
 const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => (
   <div
-    className="grid  gap-5 cursor-pointer  p-3 px-3 bg-gray-50 rounded-lg"
+    className="grid gap-5  p-3 px-3 bg-gray-50 rounded-lg"
     style={{ gridTemplateColumns: "100px 1fr" }}
   >
     <div className="text-center pt-0.5">
       <span
-        className={`font-semibold text-primary-light dark:text-primary-dark `}
+        className={`font-semibold text-primary-light dark:text-theme-dark `}
       >
         {experience.year}
       </span>
     </div>
     <div className="">
       <h3 className="font-semibold ">
-        <span className="text-lg  text-primaryText-light dark:text-primaryText-dark">
+        <span className="text-lg  text-primaryText-light dark:text-theme-dark">
           {experience.role}
         </span>{" "}
         -{" "}
-        <span className="text-secondaryText-light dark:text-secondaryText-dark text-sm">
+        <span className="text-secondaryText-light dark:text-theme-dark opacity-85 text-sm">
           {experience.company}
         </span>
       </h3>
       {experience.description && (
-        <p className="text-tertiaryText-light dark:text-tertiaryText-dark text-sm 1">
+        <p className="text-tertiaryText-light dark:text-theme-dark opacity-70 text-sm 1">
           {experience.description}
         </p>
       )}

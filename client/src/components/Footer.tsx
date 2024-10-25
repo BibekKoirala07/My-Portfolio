@@ -5,6 +5,7 @@ import {
   FaTwitter,
   FaRegNewspaper,
   FaYoutube,
+  FaFacebook,
 } from "react-icons/fa";
 
 const socialLinks = [
@@ -19,19 +20,9 @@ const socialLinks = [
     name: "LinkedIn",
   },
   {
-    icon: <FaTwitter size={28} />,
-    url: "https://twitter.com",
+    icon: <FaFacebook size={28} />,
+    url: "https://facebook.com",
     name: "Twitter",
-  },
-  {
-    icon: <FaRegNewspaper size={28} />,
-    url: "https://news.ycombinator.com",
-    name: "News",
-  },
-  {
-    icon: <FaYoutube size={28} />,
-    url: "https://youtube.com",
-    name: "YouTube",
   },
 ];
 

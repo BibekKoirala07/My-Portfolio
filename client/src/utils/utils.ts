@@ -21,6 +21,7 @@ export interface Project {
   id: number;
   title: string;
   imageUrl: string;
+  subdescription: string;
   githubUrl: string;
   liveDemoUrl?: string;
   description: string;
@@ -32,10 +33,11 @@ export const projectsData: Project[] = [
   {
     id: 1,
     title: "Effix",
+    subdescription: "",
     description: "",
     imageUrl: "Effix-pictureone.jpg",
     githubUrl: "https://github.com/BibekKoirala07/Effix",
-    liveDemoUrl: "https://e-commerce-demo.com",
+    liveDemoUrl: "",
     isLiveDemoDisabled: false,
     technologiesUsed: [
       "HTML",
@@ -51,10 +53,11 @@ export const projectsData: Project[] = [
     id: 2,
     title: "Blog App",
     imageUrl: "Blog-pictureone.jpg",
+    subdescription: "",
     description: "",
 
     githubUrl: "https://github.com/BibekKoirala07/MERN-Blog",
-    liveDemoUrl: "https://weather-dashboard-demo.com",
+    liveDemoUrl: "",
     isLiveDemoDisabled: false,
     technologiesUsed: [
       "HTML",
@@ -68,12 +71,14 @@ export const projectsData: Project[] = [
   },
   {
     id: 3,
-    title: "Chat",
+    title: "Chat App",
+    subdescription: "",
     description: "",
 
     imageUrl: "Chat-pictureone.jpg",
     githubUrl: "https://github.com/BibekKoirala07/MERN-ChatApp-simple",
     isLiveDemoDisabled: true,
+    liveDemoUrl: "",
     technologiesUsed: [
       "HTML",
       "CSS",
@@ -82,16 +87,18 @@ export const projectsData: Project[] = [
       "Node",
       "Express",
       "MongoDB",
+      "Socket",
     ],
   },
   {
     id: 4,
     title: "Movie App",
+    subdescription: "",
     description: "",
 
     imageUrl: "Movie-With-Redux-pictureone.jpg",
     githubUrl: "https://github.com/BibekKoirala07/Movie-with-Redux",
-    liveDemoUrl: "https://simple-movie-app-0oiy.onrender.com",
+    liveDemoUrl: "https://my-portfolio-fronted.onrender.com/",
     isLiveDemoDisabled: false,
     technologiesUsed: [
       "HTML",
