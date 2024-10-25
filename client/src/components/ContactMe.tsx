@@ -60,27 +60,31 @@ const ContactMe: React.FC = () => {
     e.preventDefault();
     setLoading(true);
 
-    const response = await fetch(`${url}/contact`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, message, username: name }),
-    });
-    const data = await response.json();
-    setLoading(false);
-    console.log("data", data);
-    if (response.ok) {
-      setToastMessage(data.message || "Message sent successfully!"); // Set success toast message
-    } else if (!response.ok) {
-      setToastMessage(
-        data.message || "Failed to send message. Please try again."
-      );
+    try {
+      const response = await fetch(`${url}/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, message, username: name }),
+      });
+      const data = await response.json();
+      setLoading(false);
+      console.log("data", data);
+      if (response.ok) {
+        setToastMessage(data.message || "Message sent successfully!"); // Set success toast message
+      } else if (!response.ok) {
+        setToastMessage(
+          data.message || "Failed to send message. Please try again."
+        );
+      }
+      setToastVisible(true);
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (error: any) {
+      setToastMessage(error.message || "Failed to send message");
     }
-    setToastVisible(true);
-    setName("");
-    setEmail("");
-    setMessage("");
   };
 
   const handleToastClose = () => {
