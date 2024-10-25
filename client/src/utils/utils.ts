@@ -98,7 +98,7 @@ export const projectsData: Project[] = [
 
     imageUrl: "Movie-With-Redux-pictureone.jpg",
     githubUrl: "https://github.com/BibekKoirala07/Movie-with-Redux",
-    liveDemoUrl: "https://my-portfolio-fronted.onrender.com/",
+    liveDemoUrl: "https://simple-movie-app-1.onrender.com",
     isLiveDemoDisabled: false,
     technologiesUsed: [
       "HTML",
