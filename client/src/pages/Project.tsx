@@ -29,7 +29,7 @@ const Project = () => {
           </a>
           <a
             target="_blank"
-            href={project.liveDemoUrl}
+            href={project.liveDemoUrl?.length ? project.liveDemoUrl : "/"}
             className="mt-6 rounded-lg font-medium hover:opacity-75 transition-opacity  inline-block px-8 py-3 bg-primary-light dark:bg-primary-dark text-primary-textLight dark:text-primary-textDark"
           >
             See Live
