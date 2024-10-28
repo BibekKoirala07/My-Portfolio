@@ -14,16 +14,16 @@ const Main = () => {
           alt="real"
         />
       </div>
-      <div className="flex-1 flex flex-col md:justify-center  space-y-2 text-center">
-        <div className="md:w-fit md:space-y-3 md:ml-6">
+      <div className="flex-1  flex flex-col mt-5  md:justify-center space-y-2 text-center">
+        <div className=" md:w-fit h-fit space-y-2 md:space-y-4 md:ml-6">
           <h1
-            className="text-xl text-tertiaryText-light-light dark:text-tertiaryText-dark"
+            className="text-xl text-tertiaryText-light-light dark:text-secondaryText-dark"
             style={{ lineHeight: "1" }}
           >
             Hello, I'm
           </h1>
           <h2
-            className="text-4xl text-primaryText-light dark:text-primaryText-dark font-medium"
+            className="text-4xl  dark:text-primaryText-dark font-medium"
             style={{ letterSpacing: "2px" }}
           >
             Bibek Koirala
@@ -31,9 +31,10 @@ const Main = () => {
           <h3 className="text-3xl text-secondaryText-light dark:text-secondaryText-dark">
             Full-Stack Developer
           </h3>
-          <div className="flex mt-3 md:pt-2 justify-center gap-4">
+          <div className="flex mt-4 pt-3 md:pt-2 justify-center gap-4">
             <MyButton
-              href="#"
+              href={`${frontendUrl}/my_resume.pdf`}
+              newPage={true}
               className=" rounded-full flex justify-center flex-col"
             >
               Preview CV

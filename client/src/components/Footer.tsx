@@ -1,5 +1,6 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 
 const socialLinks = [
   {
@@ -21,6 +22,11 @@ const socialLinks = [
 
 const Footer: React.FC = () => {
   const currentYear = 2024;
+
+  const location = useLocation();
+  if (location.pathname.toString().includes("my_resume")) {
+    return null;
+  }
 
   return (
     <footer className="dark:bg-componentBackground-dark  text-white p-8 pt-14">

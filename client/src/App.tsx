@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Project from "./pages/Project";
 import "./App.css";
+import PdfViewer from "./pages/PdfViewer";
 
 function App() {
   const [theme, setTheme] = useState<"dark" | "light">("dark");
@@ -63,10 +64,13 @@ function App() {
           theme={theme}
           handleTheme={handleTheme}
         />
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/project/:id" element={<Project />} />
+        </Routes>
+
+        <Routes>
+          <Route path="/my_resume.pdf" element={<PdfViewer />} />
         </Routes>
         <Footer />
       </div>
