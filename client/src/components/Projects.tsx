@@ -1,6 +1,7 @@
 import { HashLink } from "react-router-hash-link";
 import WithComponentHeader from "./WithComponentHeader";
 import { Project, projectsData } from "../utils/utils";
+import MyButton from "./MyButton";
 
 const Projects = () => {
   const frontendUrl =
@@ -14,21 +15,20 @@ const Projects = () => {
           return (
             <div
               key={index}
-              className="boder-primary-borderLight dark:borer-primary-borderDark border-2 bg-gray-100  space-y-5 p-6 rounded-3xl "
+              className="   dark:bg-componentBackground-dark  space-y-5 p-6 rounded-3xl "
             >
               <img
                 src={`${frontendUrl}/${each.imageUrl}`}
                 alt=""
-                className="transition-transform duration-1000 ease-in-out transform hover:scale-105 rounded-3xl block min-h-[220px] object-cover "
+                className="transition-transform duration-1000 ease-in-out transform hover:scale-105 rounded-2xl block min-h-[220px] object-cover "
               />
               <div className="flex  justify-between items-center px-3">
-                <h1 className="text-2xl font-semibold ">{each.title}</h1>
-                <HashLink
-                  to={"/project/" + each.id}
-                  className="px-6 hover:opacity-75 transition-opacity  p-2 rounded-lg bg-black text-white"
-                >
+                <h1 className="text-2xl font-semibold text-primaryText-light dark:text-primaryText-dark ">
+                  {each.title}
+                </h1>
+                <MyButton href={"/project/" + each.id} className="py-2">
                   Explore
-                </HashLink>
+                </MyButton>
               </div>
             </div>
           );

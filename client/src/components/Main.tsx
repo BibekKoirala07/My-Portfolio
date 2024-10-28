@@ -1,3 +1,5 @@
+import MyButton from "./MyButton";
+
 const Main = () => {
   const frontendUrl =
     import.meta.env.VITE_NODE_ENV == "production"
@@ -30,12 +32,18 @@ const Main = () => {
             Full-Stack Developer
           </h3>
           <div className="flex mt-3 md:pt-2 justify-center gap-4">
-            <button className="transition-all delay-300 ease-in-out border-2 font-medium rounded-full p-3 px-7 bg-transparent hover:bg-primary-light dark:hover:bg-primary-dark text-primary-light hover:text-primary-textLight dark:text-primary-dark dark:hover:text-primary-hoverTextLight border-primary-light dark:border-primary-dark">
+            <MyButton
+              href="#"
+              className=" rounded-full flex justify-center flex-col"
+            >
               Preview CV
-            </button>
-            <button className="transition-all delay-300 ease-in-out border-2 border-black font-medium rounded-full p-3 px-8 bg-primary-light text-primary-textLight hover:bg-primary-hoverLight hover:text-primary-hoverTextLight dark:bg-primary-dark dark:text-primary-textDark dark:hover:bg-primary-hoverDark dark:hover:text-primary-hoverTextDark  ">
-              <a href="#contact-me">Contact Me</a>
-            </button>
+            </MyButton>
+            <MyButton
+              href="#contact-me"
+              className=" flex justify-center rounded-full flex-col"
+            >
+              Contact Me
+            </MyButton>
           </div>
         </div>
       </div>

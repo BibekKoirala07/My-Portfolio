@@ -9,14 +9,22 @@ import Project from "./pages/Project";
 import "./App.css";
 
 function App() {
-  const [theme, setTheme] = useState<"dark" | "light">("light");
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [drawer, setDrawer] = useState(false);
   const [visible, setVisible] = useState(false);
   const [backdropVisible, setBackdropVisible] = useState(false);
 
+  // This effect sets the initial theme on component mount
+  useEffect(() => {
+    document.documentElement.classList.add("dark"); // Add dark class initially
+  }, []);
+
   const handleTheme = () => {
-    setTheme((prevState: string) => (prevState === "light" ? "dark" : "light"));
-    document.documentElement.classList.toggle("dark");
+    setTheme((prevState: string) => {
+      const newTheme = prevState === "light" ? "dark" : "light";
+      document.documentElement.classList.toggle("dark", newTheme === "dark");
+      return newTheme;
+    });
   };
 
   useEffect(() => {
@@ -34,7 +42,11 @@ function App() {
 
   return (
     <Router>
-      <div className={theme === "dark" ? "bg-theme-dark" : "bg-theme-light"}>
+      <div
+        className={
+          theme === "dark" ? "bg-background-dark" : "bg-background-light"
+        }
+      >
         {backdropVisible && (
           <div
             className={`fixed inset-0 bg-black bg-opacity-50 z-50 ${

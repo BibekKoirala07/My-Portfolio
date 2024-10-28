@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-  FaRegNewspaper,
-  FaYoutube,
-  FaFacebook,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 
 const socialLinks = [
   {
@@ -21,8 +14,8 @@ const socialLinks = [
   },
   {
     icon: <FaFacebook size={28} />,
-    url: "https://facebook.com",
-    name: "Twitter",
+    url: "https://www.facebook.com/bibek.koirala.35728/",
+    name: "Facebook",
   },
 ];
 
@@ -30,7 +23,7 @@ const Footer: React.FC = () => {
   const currentYear = 2024;
 
   return (
-    <footer className="bg-gray-600  text-white p-8 pt-14">
+    <footer className="dark:bg-componentBackground-dark  text-white p-8 pt-14">
       <div className="flex flex-col justify-start md:flex-row gap-7    px-4">
         <div className="flex-1  space-y-3 order-2 md:order-1">
           <h2 className="text-2xl font-semibold">Bibek Koirala</h2>
@@ -40,7 +33,7 @@ const Footer: React.FC = () => {
           </p>
         </div>
         <div className="flex-1  text-left md:text-right order-1 md:order-2">
-          <h3 className="text-xl font-semibold">SOCIAL</h3>
+          <h3 className="text-xl font-semibold">Socials</h3>
           <div className="flex justify-start md:justify-end gap-5 mt-2">
             {socialLinks.map((link) => (
               <a

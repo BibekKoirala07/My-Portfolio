@@ -21,10 +21,10 @@ export interface Project {
   id: number;
   title: string;
   imageUrl: string;
-  subdescription: string;
+  shortDescription: string;
   githubUrl: string;
   liveDemoUrl?: string;
-  description: string;
+  expandedDescription: string;
   isLiveDemoDisabled?: boolean;
   technologiesUsed: string[];
 }
@@ -33,8 +33,8 @@ export const projectsData: Project[] = [
   {
     id: 1,
     title: "Effix",
-    subdescription: "",
-    description: "",
+    shortDescription: "real",
+    expandedDescription: "not real",
     imageUrl: "Effix-pictureone.jpg",
     githubUrl: "https://github.com/BibekKoirala07/Effix",
     liveDemoUrl: "",
@@ -53,8 +53,8 @@ export const projectsData: Project[] = [
     id: 2,
     title: "Blog App",
     imageUrl: "Blog-pictureone.jpg",
-    subdescription: "",
-    description: "",
+    shortDescription: "real",
+    expandedDescription: "real",
 
     githubUrl: "https://github.com/BibekKoirala07/MERN-Blog",
     liveDemoUrl: "",
@@ -72,13 +72,13 @@ export const projectsData: Project[] = [
   {
     id: 3,
     title: "Chat App",
-    subdescription: "",
-    description: "",
+    shortDescription: "real",
+    expandedDescription: "real",
 
     imageUrl: "Chat-pictureone.jpg",
-    githubUrl: "https://github.com/BibekKoirala07/MERN-ChatApp-simple",
+    githubUrl: "https://github.com/BibekKoirala07/Chat-App",
     isLiveDemoDisabled: true,
-    liveDemoUrl: "",
+    liveDemoUrl: "https://chat-app-frontend-fs89.onrender.com",
     technologiesUsed: [
       "HTML",
       "CSS",
@@ -93,8 +93,9 @@ export const projectsData: Project[] = [
   {
     id: 4,
     title: "Movie App",
-    subdescription: "",
-    description: "",
+    shortDescription:
+      " With the Simple Movie-app, you can easily browse and discover a wide variety of movies with an intuitive interface designed for seamless navigation. Whether you're searching for your favorite film or exploring new releases, this app makes finding the perfect movie quick and enjoyable.",
+    expandedDescription: "real",
 
     imageUrl: "Movie-With-Redux-pictureone.jpg",
     githubUrl: "https://github.com/BibekKoirala07/Movie-with-Redux",

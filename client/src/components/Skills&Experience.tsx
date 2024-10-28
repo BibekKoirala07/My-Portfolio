@@ -73,16 +73,16 @@ const experienceData: Experience[] = [
 ];
 
 const SkillCard: React.FC<SkillCardProps> = ({ skill, isColorMode }) => {
+  console.log("colorMode", isColorMode);
   const frontendUrl =
     import.meta.env.VITE_NODE_ENV == "production"
       ? import.meta.env.VITE_PROD_FRONTEND_URL
       : import.meta.env.VITE_DEV_FRONTEND_URL;
   return (
-    <div className="flex flex-col gap-1  py-3 rounded-xl bg-gray-50 items-center">
+    <div className="flex dark:bg-componentBackground-dark flex-col gap-1  pt-3 pb-4  rounded-xl bg-gray-50 items-center">
       <div
-        className={`w-16 h-16  rounded-full flex items-center justify-center mb-2 transition-all duration-300 group-hover:shadow-lg ${
-          isColorMode ? "bg-gray-50" : "bg-gray-100"
-        }`}
+        className={`w-16 h-16  rounded-full flex items-center justify-center mb-2 transition-all duration-300 group-hover:shadow-lg
+         `}
       >
         <img
           src={`${frontendUrl}/${skill.imagePath}`}
@@ -91,35 +91,32 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill, isColorMode }) => {
           color={skill.color}
         />
       </div>
-      <span className="text-sm text-gray-600 text-center">{skill.name}</span>
+      <span className="text-sm dark:text-componentText-dark text-center">
+        {skill.name}
+      </span>
     </div>
   );
 };
 
 const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => (
   <div
-    className="grid gap-5  p-3 px-3 bg-gray-50 rounded-lg"
+    className="grid gap-5  p-3 px-3 dark:bg-componentBackground-dark rounded-lg"
     style={{ gridTemplateColumns: "100px 1fr" }}
   >
     <div className="text-center pt-0.5">
-      <span
-        className={`font-semibold text-primary-light dark:text-theme-dark `}
-      >
+      <span className={`font-semibold dark:text-primaryText-dark `}>
         {experience.year}
       </span>
     </div>
     <div className="">
-      <h3 className="font-semibold ">
-        <span className="text-lg  text-primaryText-light dark:text-theme-dark">
-          {experience.role}
-        </span>{" "}
-        -{" "}
-        <span className="text-secondaryText-light dark:text-theme-dark opacity-85 text-sm">
+      <h3 className="font-semibold dark:text-secondaryText-dark">
+        <span className="text-lg">{experience.role}</span> -{" "}
+        <span className=" dark:text-secondaryText-dark opacity-85 text-sm">
           {experience.company}
         </span>
       </h3>
       {experience.description && (
-        <p className="text-tertiaryText-light dark:text-theme-dark opacity-70 text-sm 1">
+        <p className=" text-sm dark:text-secondaryText-dark ">
           {experience.description}
         </p>
       )}

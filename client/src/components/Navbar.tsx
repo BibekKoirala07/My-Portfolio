@@ -18,13 +18,13 @@ const Navbar = ({
 }) => {
   console.log("drawer", drawer);
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-lg border-b">
+    <nav className="top-0 z-50">
       <div
         className={`max-w-7xl mx-auto p-5 md:px-9 flex justify-between items-center relative transition-all duration-500`}
       >
         <Link
           to={"/"}
-          className="text-2xl font-medium text-primary-light dark:text-primary-dark"
+          className="text-2xl font-medium text-primary-light dark:text-primaryText-dark"
         >
           Bibek Koirala
         </Link>
@@ -45,11 +45,12 @@ const Navbar = ({
           </div>
 
           <button
-            onClick={handleTheme}
+            title="Disabled for now"
+            // onClick={handleTheme}
             className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             aria-label="Toggle theme"
           >
-            {theme === "dark" ? (
+            {theme === "light" ? (
               <Sun className="w-5 h-5 text-yellow-500" />
             ) : (
               <Moon className="w-5 h-5 text-gray-700" />
@@ -59,10 +60,11 @@ const Navbar = ({
 
         <div className="flex items-center gap-4 md:hidden">
           <button
-            onClick={handleTheme}
+            title="Disabled for now"
+            // onClick={handleTheme}
             className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           >
-            {theme == "dark" ? (
+            {theme == "light" ? (
               <Sun className="w-5 h-5 text-yellow-500" />
             ) : (
               <Moon className="w-5 h-5 text-gray-700" />

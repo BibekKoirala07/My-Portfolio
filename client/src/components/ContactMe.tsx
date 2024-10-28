@@ -3,6 +3,7 @@ import WithComponentHeader from "./WithComponentHeader";
 import { AiFillEnvironment, AiFillMail, AiFillPhone } from "react-icons/ai";
 import Toast from "./Toast";
 import { IconBaseProps } from "react-icons";
+import MyButton from "./MyButton";
 
 interface ContactDetail {
   icon: React.ReactNode;
@@ -108,7 +109,7 @@ const ContactMe: React.FC = () => {
             free to Contact me by submitting the form below and I will get back
             to you as soon as possible
           </p>
-          <div className="text-xl text-tertiaryText-light dark:text-tertiaryText-dark ">
+          <div className="text-xl dark:text-secondaryText-dark ">
             {contactDetails.map((detail, index) => (
               <section
                 key={index}
@@ -141,7 +142,7 @@ const ContactMe: React.FC = () => {
                 placeholder="Enter your name"
                 value={name}
                 onChange={(e) => setName(e.target.value)} // Update state for name
-                className="w-full mt-1 px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-300"
+                className="w-full dark:text-primaryText-dark focus:bg-componentBackground-dark placeholder:dark:text-secondaryText-dark focus:outline-none border-none mt-1 px-3 py-2 border rounded-md shadow-sm dark:bg-componentBackground-dark"
                 required
               />
             </div>
@@ -149,7 +150,7 @@ const ContactMe: React.FC = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-primaryText-light dark:text-primaryText-dark"
+                className="block text-sm  font-medium text-primaryText-light dark:text-primaryText-dark"
               >
                 Email
               </label>
@@ -160,7 +161,7 @@ const ContactMe: React.FC = () => {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)} // Update state for email
-                className="w-full mt-1 px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-300"
+                className="dark:text-primaryText-dark dark:bg-componentBackground-dark dark:focus:bg-componentBackground-dark placeholder:dark:text-secondaryText-dark  border-none w-full mt-1 px-3 py-2 border rounded-md shadow-sm   focus:outline-none"
                 required
               />
             </div>
@@ -179,7 +180,7 @@ const ContactMe: React.FC = () => {
                 placeholder="Your message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)} // Update state for message
-                className="w-full mt-1 px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-300"
+                className="w-full dark:text-primaryText-dark placeholder:dark:text-secondaryText-dark mt-1 px-3 py-2 border rounded-md shadow-sm dark:bg-componentBackground-dark focus:outline-none border-none"
                 required
               />
             </div>
@@ -190,7 +191,7 @@ const ContactMe: React.FC = () => {
                 disabled={
                   loading || !message.length || !email.length || !name.length
                 }
-                className="disabled:opacity-75 w-full bg-primary-light dark:bg-primary-dark text-primary-textLight dark:text-primary-textDark font-semibold py-2 rounded-md  transition"
+                className=" w-full dark:bg-[#ecedef] dark:text-black text-  font-semibold py-2 rounded-md"
               >
                 {loading
                   ? "Sending..."
