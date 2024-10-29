@@ -26,6 +26,7 @@ export interface Project {
   liveDemoUrl?: string;
   expandedDescription: string;
   isLiveDemoDisabled?: boolean;
+  featuresAvailable: string[];
   technologiesUsed: string[];
 }
 
@@ -33,12 +34,13 @@ export const projectsData: Project[] = [
   {
     id: 1,
     title: "Effix",
-    shortDescription: "real",
-    expandedDescription: "not real",
+    shortDescription: "",
+    expandedDescription: "",
     imageUrl: "Effix-pictureone.jpg",
     githubUrl: "https://github.com/BibekKoirala07/Effix",
     liveDemoUrl: "",
-    isLiveDemoDisabled: false,
+    isLiveDemoDisabled: true,
+    featuresAvailable: [],
     technologiesUsed: [
       "HTML",
       "CSS",
@@ -53,12 +55,14 @@ export const projectsData: Project[] = [
     id: 2,
     title: "Blog App",
     imageUrl: "Blog-pictureone.jpg",
-    shortDescription: "real",
+    shortDescription:
+      "Welcome to my blog app, where you can explore engaging content designed just for you! With role-based authentication, you’ll enjoy a personalized experience—whether you’re reading, contributing, or managing content. Dive in and start your blogging journey today",
     expandedDescription: "real",
+    featuresAvailable: ["role bases Authentication"],
 
     githubUrl: "https://github.com/BibekKoirala07/MERN-Blog",
     liveDemoUrl: "",
-    isLiveDemoDisabled: false,
+    isLiveDemoDisabled: true,
     technologiesUsed: [
       "HTML",
       "CSS",
@@ -72,8 +76,10 @@ export const projectsData: Project[] = [
   {
     id: 3,
     title: "Chat App",
-    shortDescription: "real",
+    shortDescription:
+      "Hey there! Welcome to my chat app, where chatting with friends is super easy and fun. Whether you want to catch up in a private one-on-one conversation or jump into a lively group chat, this app has you covered. Stay connected, share laughs, and make every conversation memorable!",
     expandedDescription: "real",
+    featuresAvailable: ["Single and Group Chat"],
 
     imageUrl: "Chat-pictureone.jpg",
     githubUrl: "https://github.com/BibekKoirala07/Chat-App",
@@ -98,9 +104,10 @@ export const projectsData: Project[] = [
     expandedDescription: "real",
 
     imageUrl: "Movie-With-Redux-pictureone.jpg",
-    githubUrl: "https://github.com/BibekKoirala07/Movie-with-Redux",
+    githubUrl: "https://github.com/BibekKoirala07/Simple-Movie-App",
     liveDemoUrl: "https://simple-movie-app-1.onrender.com",
     isLiveDemoDisabled: false,
+    featuresAvailable: ["Google OAuth Authentication"],
     technologiesUsed: [
       "HTML",
       "CSS",

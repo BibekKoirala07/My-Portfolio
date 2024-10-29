@@ -15,8 +15,10 @@ const MyButton = ({
   if (newPage) {
     return (
       <HashLink
-        to="/my_resume.pdf"
-        className={`dark:bg-[#ecedef] w-fit p-2.5 align-middle px-7 font-medium dark:text-black transition-opacity hover:opacity-80 rounded-md ${className}`}
+        to={href}
+        className={`dark:bg-[#ecedef]
+         p-2.5 px-7
+         w-fit  align-middle  font-medium dark:text-black transition-opacity hover:opacity-80 rounded-md ${className}`}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -27,7 +29,7 @@ const MyButton = ({
   return (
     <HashLink
       to={href}
-      className={`dark:bg-[#ecedef] w-fit p-2.5 align-middle px-7 font-medium dark:text-black transition-opacity hover:opacity-80 rounded-md ${className}`}
+      className={`dark:bg-[#ecedef] p-2.5 px-7 w-fit align-middle  font-medium dark:text-black transition-opacity hover:opacity-80 rounded-md ${className}`}
     >
       {children}
     </HashLink>

@@ -25,18 +25,22 @@ const Project = () => {
           {project.shortDescription}
         </p>
         <div className="space-x-4">
-          <MyButton href={project.githubUrl}>
-            <a target="_blank" href={project.githubUrl} className=" ">
+          <MyButton newPage={true} href={project.githubUrl}>
+            <a target="_blank" href={project.githubUrl} className="">
               Github
             </a>
           </MyButton>
           <MyButton
-            href={project.liveDemoUrl?.length ? project.liveDemoUrl : "/"}
+            newPage={true}
+            href={project.isLiveDemoDisabled ? `#` : `${project.liveDemoUrl}`}
+            className={`${
+              project.isLiveDemoDisabled ? "opacity-50 cursor-not-allowed" : ""
+            }`}
           >
             <a
               target="_blank"
               href={project.liveDemoUrl?.length ? project.liveDemoUrl : "/"}
-              className=" "
+              className=""
             >
               See Live
             </a>
@@ -57,12 +61,17 @@ const Project = () => {
         <h2 className="text-3xl font-bold mb-6 dark:text-primaryText-dark">
           Project Overview
         </h2>
-        <p className="text-gray-600 mb-6 leading-relaxed">
+        <p className="text-secondaryText-dark mb-6 leading-relaxed">
           {project.expandedDescription}
         </p>
-        <p className="text-gray-600 leading-relaxed">
-          Feel free to check out the Project by visiting the Project Link.
-        </p>
+        <div className="text-secondaryText-dark mb-6 leading-relaxed">
+          Following are features available:
+          <ul className="text-secondaryText-dark p-6 pt-2">
+            {project.featuresAvailable.map((each: any) => {
+              return <li className="list-disc">{each}</li>;
+            })}
+          </ul>
+        </div>
       </div>
 
       <div className="w-full max-w-4xl text-left mb-16">

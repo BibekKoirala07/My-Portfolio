@@ -1,4 +1,3 @@
-import { HashLink } from "react-router-hash-link";
 import WithComponentHeader from "./WithComponentHeader";
 import { Project, projectsData } from "../utils/utils";
 import MyButton from "./MyButton";
