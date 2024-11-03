@@ -38,23 +38,19 @@ const skillsData: Skill[] = [
     color: "#F7DF1E",
     imagePath: "javascript.png",
   },
-  { name: "Node.js", color: "#339933", imagePath: "/node.png" },
-  {
-    name: "React JS",
-    color: "#61DAFB",
-    imagePath: "react.png",
-  },
-  {
-    name: "Redux",
-    color: "#764ABC",
-    imagePath: "redux.png",
-  },
-  { name: "Vue", color: "#4FC08D", imagePath: "/vue.png" },
   {
     name: "TypeScript",
     color: "#3178C6",
     imagePath: "typescript.png",
   },
+  {
+    name: "React JS",
+    color: "#61DAFB",
+    imagePath: "react.png",
+  },
+  { name: "Vue", color: "#4FC08D", imagePath: "/vue.png" },
+  { name: "Node.js", color: "#339933", imagePath: "/node.png" },
+  { name: "Express.js", color: "#339933", imagePath: "/express.png" },
   {
     name: "GraphQL",
     color: "#E10098",
