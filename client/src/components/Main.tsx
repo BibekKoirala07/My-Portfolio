@@ -48,7 +48,7 @@ const Main = () => {
       {/* Content Section */}
       <div className="flex-1 flex justify-center md:justify-end items-center">
         <img
-          src={`${frontendUrl}/my-photo.jpg`}
+          src={`${frontendUrl}/my_photo_main.jpg`}
           className="rounded-full w-[200px] md:w-[300px] md:h-[300px] mt-auto md:mt-0 h-[200px] object-cover"
           alt="real"
         />
