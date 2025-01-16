@@ -1,20 +1,17 @@
-import Main from "../components/Main";
-import SkillsExperiences from "../components/Skills&Experience";
-import ContactMe from "../components/ContactMe";
-import AboutMe from "../components/AboutMe";
-import Projects from "../components/Projects";
-
+import AboutMeExperience from "../components/about-me/AboutMeExperience";
+import AboutMeHero from "../components/about-me/AboutMeHero";
+import AboutMeMovingTechStack from "../components/about-me/AboutMeMovingTechStack";
+import ComponentBox from "../components/ComponentBox";
+// className="min-h-screen text-white"
 const Home = () => {
   return (
-    <div>
-      <div className="min-h-[calc(100vh-64px)] flex flex-col">
-        <Main />
+    <ComponentBox>
+      <div>
+        <AboutMeHero />
+        <AboutMeMovingTechStack />
+        <AboutMeExperience />
       </div>
-      <AboutMe />
-      <SkillsExperiences />
-      <Projects />
-      <ContactMe />
-    </div>
+    </ComponentBox>
   );
 };
 

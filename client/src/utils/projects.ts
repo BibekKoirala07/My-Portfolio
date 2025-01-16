@@ -1,22 +1,3 @@
-export const navLinks = [
-  {
-    href: "/#about-me",
-    label: "About Me",
-  },
-  {
-    href: "/#experience",
-    label: "Experience",
-  },
-  {
-    href: "/#projects",
-    label: "Projects",
-  },
-  {
-    href: "/#contact-me",
-    label: "Contact",
-  },
-];
-
 export interface Project {
   id: number;
   title: string;

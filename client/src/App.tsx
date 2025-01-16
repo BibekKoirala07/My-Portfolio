@@ -1,80 +1,53 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import Drawer from "./components/Drawer";
-import Home from "./pages/Home";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import Project from "./pages/Project";
 import "./App.css";
-import PdfViewer from "./pages/PdfViewer";
+import MainLayout from "./layouts/MainLayout";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import ContactMe from "./pages/ContactMe";
+import Blogs from "./pages/Blogs";
 
 function App() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
-  const [drawer, setDrawer] = useState(false);
-  const [visible, setVisible] = useState(false);
-  const [backdropVisible, setBackdropVisible] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
-  // This effect sets the initial theme on component mount
   useEffect(() => {
-    document.documentElement.classList.add("dark"); // Add dark class initially
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setIsDarkMode(true);
+    } else if (savedTheme === "light") {
+      setIsDarkMode(false);
+    } else {
+      setIsDarkMode(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
   }, []);
 
-  const handleTheme = () => {
-    setTheme((prevState: string) => {
-      const newTheme = prevState === "light" ? "dark" : "light";
-      document.documentElement.classList.toggle("dark", newTheme === "dark");
-      return newTheme;
-    });
-  };
-
   useEffect(() => {
-    if (drawer) {
-      setVisible(true);
-      setBackdropVisible(true);
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     } else {
-      const timer = setTimeout(() => {
-        setVisible(false);
-        setBackdropVisible(false);
-      }, 400);
-      return () => clearTimeout(timer);
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
-  }, [drawer]);
+  }, [isDarkMode]);
+
+  // const toggleDarkMode = () => {
+  //   setIsDarkMode(!isDarkMode);
+  // };
 
   return (
-    <Router>
-      <div
-        className={
-          theme === "dark" ? "bg-background-dark" : "bg-background-light"
-        }
-      >
-        {backdropVisible && (
-          <div
-            className={`fixed inset-0 bg-black bg-opacity-50 z-50 ${
-              drawer ? "backdrop-enter" : "backdrop-exit"
-            }`}
-            onClick={() => setDrawer(false)}
-          />
-        )}
-        {visible && <Drawer drawer={drawer} setDrawer={setDrawer} />}
-
-        <Navbar
-          drawer={drawer}
-          setDrawer={setDrawer}
-          theme={theme}
-          handleTheme={handleTheme}
-        />
+    <div className="min-h-screen">
+      <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/project/:id" element={<Project />} />
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<Home />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="contact" element={<ContactMe />} />
+            <Route path="blogs" element={<Blogs />} />
+          </Route>
         </Routes>
-
-        <Routes>
-          <Route path="/my_resume.pdf" element={<PdfViewer />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+      </BrowserRouter>
+    </div>
   );
 }
 

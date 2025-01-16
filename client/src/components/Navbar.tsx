@@ -1,99 +1,125 @@
-import { Moon, Sun, Menu } from "lucide-react";
-import { Dispatch, SetStateAction } from "react";
-import { navLinks } from "../utils/utils";
-import { HashLink } from "react-router-hash-link";
 import { Link, useLocation } from "react-router-dom";
 
+const navLinks = [
+  { path: "/", label: "About Me" },
+  { path: "/projects", label: "Projects" },
+  { path: "/contact", label: "Contact" },
+  { path: "/resume", label: "Resume" },
+  { path: "/blogs", label: "Blogs" },
+];
+
 const Navbar = ({
-  theme,
-  drawer,
-  setDrawer,
-  handleTheme,
+  isMobile = false,
+  isSidebarOpen,
+  setSidebarOpen,
 }: {
-  drawer: boolean;
-  theme: string;
-  setDrawer: Dispatch<SetStateAction<boolean>>;
-
-  handleTheme: () => void;
+  isMobile: boolean;
+  isSidebarOpen: any;
+  setSidebarOpen: any;
 }) => {
+  const handleSidebar = () => {
+    setSidebarOpen((prevState: boolean) => !prevState);
+  };
   const location = useLocation();
-  console.log("location", location);
-  if (location.pathname.toString().includes("my_resume")) {
-    return null;
-  } else {
-    return (
-      <nav className="top-0 z-50">
-        <div
-          className={`max-w-7xl mx-auto p-5 md:px-9 flex justify-between items-center relative transition-all duration-500`}
-        >
-          <Link
-            to={"/"}
-            className="text-2xl font-medium text-primary-light dark:text-primaryText-dark"
+  console.log("dark:bg-dark-mainComponentBackground ");
+  console.log(`    dark:bg-dark-mainComponentBackground/80
+        backdrop-blur-sm
+        h-fit pb-10 text-center rounded-xl p-5 text-white w-full
+        ${isMobile ? "shadow-xl" : ""}
+        transition-all duration-300`);
+  return (
+    <div
+      className={`
+       
+        dark:bg-dark-mainComponentBackground
+    h-fit pb-10 text-center rounded-xl p-5 text-white w-full`}
+    >
+      {isMobile && (
+        <div className="flex justify-end mb-7">
+          <button
+            onClick={() => setSidebarOpen(false)}
+            className="
+           w-10 h-10 
+           relative 
+           focus:outline-none 
+           rounded-lg
+           bg-white/10
+           hover:bg-white/20
+           transition-all 
+           duration-300
+           group
+         "
           >
-            Bibek Koirala
-          </Link>
-
-          <div className="hidden md:flex items-center gap-8">
-            <div className="flex gap-6 text-sm md:text-base">
-              {navLinks.map((link) => (
-                <HashLink
-                  smooth
-                  key={link.href}
-                  to={link.href}
-                  className="relative text-gray-700 dark:text-gray-200 hover:text-primary-light dark:hover:text-primary-dark transition-colors group"
-                >
-                  {link.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-light dark:bg-primary-dark group-hover:w-full transition-all duration-300"></span>
-                </HashLink>
-              ))}
-            </div>
-
-            <button
-              title="Disabled for now"
-              // onClick={handleTheme}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              aria-label="Toggle theme"
-            >
-              {theme === "light" ? (
-                <Sun className="w-5 h-5 text-yellow-500" />
-              ) : (
-                <Moon className="w-5 h-5 text-gray-700" />
-              )}
-            </button>
-          </div>
-
-          <div className="flex items-center gap-4 md:hidden">
-            <button
-              title="Disabled for now"
-              // onClick={handleTheme}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            >
-              {theme == "light" ? (
-                <Sun className="w-5 h-5 text-yellow-500" />
-              ) : (
-                <Moon className="w-5 h-5 text-gray-700" />
-              )}
-            </button>
-
-            <button
-              className="relative z-20"
-              onClick={() => setDrawer(true)}
-              aria-label="Toggle menu"
-            >
-              <Menu className="w-6 h-6 text-gray-700 dark:text-gray-200" />
-            </button>
-          </div>
-
-          {drawer && (
-            <div
-              className="fixed md:hidden inset-0 transition-opacity duration-300"
-              style={{ zIndex: 5 }}
-            />
-          )}
+            <span
+              className={`
+           absolute top-1/2 left-1/2 
+           w-6 h-0.5 
+           bg-white 
+           rounded-full
+           -translate-x-1/2 -translate-y-1/2
+           transform rotate-45 
+           transition-all duration-300
+           group-hover:w-5
+           group-hover:bg-white/90
+         `}
+            ></span>
+            <span
+              className={`
+           absolute top-1/2 left-1/2
+           w-6 h-0.5 
+           bg-white 
+           rounded-full
+           -translate-x-1/2 -translate-y-1/2
+           transform -rotate-45 
+           transition-all duration-300
+           group-hover:w-5
+           group-hover:bg-white/90
+         `}
+            ></span>
+          </button>
         </div>
+      )}
+      <div className="bg-[#242424] mx-8 mt-4 flex justify-center rounded-xl py-8  ">
+        <img
+          src="/my_photo_main.jpg"
+          alt="Profile"
+          className="w-[90px] object-cover rounded-full h-[90px]"
+        />
+      </div>
+      <h1 className="text-2xl mt-3 font-medium">Bibek Koirala</h1>
+      <p className="italic">Full-Stack Developer</p>
+
+      <nav className="flex flex-col space-y-2 mt-4">
+        {navLinks.map((link, index) => {
+          if (link.path === "/resume") {
+            return (
+              <a
+                key={index}
+                href="/BibekKoirala_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-400 p-2 rounded text-white font-medium transition-colors"
+              >
+                {link.label}
+              </a>
+            );
+          }
+          return (
+            <Link
+              key={index}
+              to={link.path}
+              onClick={() => handleSidebar()}
+              className={`hover:text-gray-400  p-2 rounded text-black font-medium ${
+                location.pathname == link.path ? "bg-white" : " text-white"
+              } transition-colors`}
+            >
+              {link.label}
+            </Link>
+          );
+        })}
       </nav>
-    );
-  }
+    </div>
+  );
 };
 
 export default Navbar;
