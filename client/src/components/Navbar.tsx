@@ -10,7 +10,7 @@ const navLinks = [
 
 const Navbar = ({
   isMobile = false,
-  isSidebarOpen,
+  // isSidebarOpen,
   setSidebarOpen,
 }: {
   isMobile: boolean;

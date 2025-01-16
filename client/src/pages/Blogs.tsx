@@ -124,7 +124,7 @@ const SearchIcon = () => (
 // export default Blogs;
 
 import { useState } from "react";
-import { categories, posts } from "../utils/blogs";
+import { categories } from "../utils/blogs";
 import CollectionOfButton from "../components/CollectionOfButton";
 import ComponentBox from "../components/ComponentBox";
 import TrailingButton from "../components/TrailingButton";
