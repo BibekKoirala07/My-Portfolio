@@ -8,17 +8,14 @@ import ContactMe from "./pages/ContactMe";
 import Blogs from "./pages/Blogs";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    return savedTheme === "dark" || (!savedTheme && prefersDark);
-  });
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   console.log("set", setIsDarkMode);
 
+  document.documentElement.classList.add("dark");
+
   useEffect(() => {
+    console.log("document", document.documentElement.classList);
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
@@ -26,7 +23,7 @@ function App() {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }
-  }, [isDarkMode]);
+  }, []);
 
   return (
     <div className="dark:bg-dark-fullBackground min-h-screen">
