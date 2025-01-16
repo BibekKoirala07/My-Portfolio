@@ -75,7 +75,6 @@ const ContactMe = () => {
             type="email"
             name="random-email-123"
             value={email}
-            autocomplete="new-email"
             form="form-123"
             onChange={(e: any) => setEmail(e.target.value)}
             id="random-email-123"

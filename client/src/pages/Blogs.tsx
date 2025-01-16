@@ -129,25 +129,25 @@ import CollectionOfButton from "../components/CollectionOfButton";
 import ComponentBox from "../components/ComponentBox";
 import TrailingButton from "../components/TrailingButton";
 
-const BlogPost = ({ title, date, readTime, category, excerpt, tags }) => (
-  <div>
-    <div>
-      <span>{category}</span>
-    </div>
-    <h2>{title}</h2>
-    <div>
-      <div>{date}</div>
-      <div>{readTime} min read</div>
-    </div>
-    <p>{excerpt}</p>
-    <div>
-      {tags.map((tag, index) => (
-        <span key={index}>#{tag}</span>
-      ))}
-    </div>
-    <button>{/* Read More */}</button>
-  </div>
-);
+// const BlogPost = ({ title, date, readTime, category, excerpt, tags }) => (
+//   <div>
+//     <div>
+//       <span>{category}</span>
+//     </div>
+//     <h2>{title}</h2>
+//     <div>
+//       <div>{date}</div>
+//       <div>{readTime} min read</div>
+//     </div>
+//     <p>{excerpt}</p>
+//     <div>
+//       {tags.map((tag, index) => (
+//         <span key={index}>#{tag}</span>
+//       ))}
+//     </div>
+//     <button>{/* Read More */}</button>
+//   </div>
+// );
 
 const Blogs = () => {
   return (
@@ -193,9 +193,9 @@ const Blogs = () => {
         </div>
 
         <div>
-          {posts.map((post, index) => (
-            <BlogPost key={index} {...post} />
-          ))}
+          {/* {posts.map((post, index) => (
+            // <BlogPost key={index} {...post} />
+          ))} */}
         </div>
 
         <TrailingButton onClick={() => {}} text="Show More..." />
