@@ -8,18 +8,15 @@ import ContactMe from "./pages/ContactMe";
 import Blogs from "./pages/Blogs";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(true);
-
-  useEffect(() => {
+  const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setIsDarkMode(true);
-    } else if (savedTheme === "light") {
-      setIsDarkMode(false);
-    } else {
-      setIsDarkMode(window.matchMedia("(prefers-color-scheme: dark)").matches);
-    }
-  }, []);
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    return savedTheme === "dark" || (!savedTheme && prefersDark);
+  });
+
+  console.log("set", setIsDarkMode);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -30,10 +27,6 @@ function App() {
       localStorage.setItem("theme", "light");
     }
   }, [isDarkMode]);
-
-  // const toggleDarkMode = () => {
-  //   setIsDarkMode(!isDarkMode);
-  // };
 
   return (
     <div className="min-h-screen">
