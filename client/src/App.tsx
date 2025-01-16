@@ -29,7 +29,7 @@ function App() {
   }, [isDarkMode]);
 
   return (
-    <div className="min-h-screen">
+    <div className="dark:bg-dark-fullBackground min-h-screen">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>
