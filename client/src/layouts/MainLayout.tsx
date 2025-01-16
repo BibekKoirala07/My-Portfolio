@@ -162,13 +162,13 @@ const MainLayout = () => {
         </div>
         <motion.div
           className={`text-white rounded-xl dark:bg-dark-mainComponentBackground`}
-          initial={{ opacity: 0, y: 200 }} // Start from bottom (y: 100) with opacity 0
-          animate={{ opacity: 1, y: 0 }} // End at original position with full opacity
+          initial={{ opacity: 0, y: 200 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{
-            type: "spring", // Use spring for bouncy effect
-            stiffness: 100, // Adjust stiffness for bounce strength
-            damping: 10, // Adjust damping for smoother motion
-            duration: 4, // Optional: You can tweak the duration
+            type: "spring",
+            stiffness: 100,
+            damping: 10,
+            duration: 4,
           }}
         >
           <Outlet />
