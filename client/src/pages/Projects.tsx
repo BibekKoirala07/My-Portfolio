@@ -13,10 +13,16 @@ const Projects = () => {
 
   const categories = ["All", "Frontend", "Full Stack", "AI/ML", "Mobile"];
 
+  // console.log("selected", selected);
+
   const filteredProjects =
     selected === "All"
       ? projectsData
-      : projectsData.filter((project: any) => project.category === selected);
+      : projectsData.filter((project: any) =>
+          project.category.includes(selected)
+        );
+
+  // console.log("filtered Projects", filteredProjects);
 
   return (
     <ComponentBox
@@ -31,12 +37,6 @@ const Projects = () => {
           onClick={handleSelect}
         />
       </div>
-
-      {/* <div>
-        {filteredProjects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
-        ))}
-      </div> */}
 
       <div className="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 gap-6">
         {filteredProjects.map((project, index) => (

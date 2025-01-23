@@ -38,7 +38,7 @@ const ProjectCard = ({
   githubUrl,
   liveDemoUrl,
 }: Project) => (
-  <div className="rounded-lg p-3 bg-[#272729]">
+  <div className=" rounded-lg p-3 pb-6 h-full flex flex-col bg-[#272729]">
     <div className="relative aspect-video overflow-hidden">
       <img
         src={imageUrl}
@@ -47,22 +47,22 @@ const ProjectCard = ({
       />
     </div>
 
-    <div className="p-2 text-center">
+    <div className="p-2 flex-1 relative pb-10 0 text-center">
       <h3 className="text-xl font-bold text-white mb-1">{title}</h3>
       <p className="text-zinc-300 text-sm mb-4">{shortDescription}</p>
 
       <div className="flex flex-wrap gap-2 mb-6">
         {technologiesUsed.map((tag: any, index: number) => (
-          <span
-            className="bg-zinc-700 text-zinc-300 text-xs px-3 py-1 rounded-full"
+          <p
+            className="bg-zinc-700 text-zinc-300 text-sm px-4 py-1 rounded"
             key={index}
           >
             {tag}
-          </span>
+          </p>
         ))}
       </div>
 
-      <div className="flex justify-between">
+      <div className="flex  absolute bottom-0 w-[97%] justify-between">
         <a
           href={githubUrl}
           target="_blank"

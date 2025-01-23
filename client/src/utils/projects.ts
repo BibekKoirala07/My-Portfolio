@@ -2,6 +2,7 @@ export interface Project {
   id: number;
   title: string;
   imageUrl: string;
+  category?: string[];
   shortDescription: string;
   githubUrl: string;
   liveDemoUrl?: string;
@@ -15,7 +16,9 @@ export const projectsData: Project[] = [
   {
     id: 1,
     title: "Effix",
-    shortDescription: "",
+    category: ["Frontend", "Full Stack"],
+    shortDescription:
+      "Get instant access to skilled professionals for all your service needs! Our platform seamlessly connects customers with verified servicemen, ensuring fast, reliable, and hassle-free assistance—anytime, anywhere. Whether it’s home repairs, cleaning, beauty services, or technical support,",
     expandedDescription: "",
     imageUrl: "Effix-pictureone.jpg",
     githubUrl: "https://github.com/BibekKoirala07/Effix",
@@ -36,6 +39,7 @@ export const projectsData: Project[] = [
     id: 2,
     title: "Blog App",
     imageUrl: "Blog-pictureone.jpg",
+    category: ["Frontend", "Full Stack"],
     shortDescription:
       "Welcome to my blog app, where you can explore engaging content designed just for you! With role-based authentication, you’ll enjoy a personalized experience—whether you’re reading, contributing, or managing content. Dive in and start your blogging journey today",
     expandedDescription: "real",
@@ -57,6 +61,7 @@ export const projectsData: Project[] = [
   {
     id: 3,
     title: "Chat App",
+    category: ["Frontend", "Full Stack"],
     shortDescription:
       "Hey there! Welcome to my chat app, where chatting with friends is super easy and fun. Whether you want to catch up in a private one-on-one conversation or jump into a lively group chat, this app has you covered. Stay connected, share laughs, and make every conversation memorable!",
     expandedDescription: "real",
@@ -80,6 +85,7 @@ export const projectsData: Project[] = [
   {
     id: 4,
     title: "Movie App",
+    category: ["Frotend", "Full Stack"],
     shortDescription:
       " With the Simple Movie-app, you can easily browse and discover a wide variety of movies with an intuitive interface designed for seamless navigation. Whether you're searching for your favorite film or exploring new releases, this app makes finding the perfect movie quick and enjoyable.",
     expandedDescription: "real",

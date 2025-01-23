@@ -23,7 +23,7 @@ const TechStackCarousel = () => {
             {[...techStack, ...techStack].map((tech, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center justify-center min-w-[120px]  rounded-lg p-4 shadow-lg"
+                className="flex flex-col items-center justify-center min-w-[120px]  rounded-lg p-4"
               >
                 <div className="w-16 h-16 flex items-center justify-center  rounded-lg p-2">
                   <img

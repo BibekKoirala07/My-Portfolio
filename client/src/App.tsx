@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import ContactMe from "./pages/ContactMe";
 import Blogs from "./pages/Blogs";
+import Tools from "./pages/Tools";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -34,6 +35,7 @@ function App() {
             <Route path="projects" element={<Projects />} />
             <Route path="contact" element={<ContactMe />} />
             <Route path="blogs" element={<Blogs />} />
+            <Route path="tools" element={<Tools />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -28,7 +28,7 @@ const SocialLink = ({
 );
 
 const MainLayout = () => {
-  const [isSidebarOpen, setSidebarOpen] = useState(true);
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
   console.log(`  fixed top-[20px] right-0
           lg:hidden
           h-screen
@@ -103,9 +103,9 @@ const MainLayout = () => {
       </div>
 
       <div className="col-span-3">
-        <div className=" py-5 px-7 dark:bg-dark-mainComponentBackground mb-4 rounded-lg flex justify-between bg-red-500">
+        <div className=" py-5 px-7 dark:bg-dark-mainComponentBackground mb-4 rounded-lg flex justify-between items-center bg-red-500">
           <div
-            className="flex lg:hidden flex-col gap-1 cursor-pointer w-9"
+            className="flex  lg:hidden flex-col gap-1 cursor-pointer w-9"
             onClick={() => setSidebarOpen((prevState) => !prevState)}
           >
             <span className="bg-white h-[3px] w-full rounded-full"></span>
@@ -113,7 +113,6 @@ const MainLayout = () => {
             <span className="bg-white h-[3px] w-full rounded-full"></span>
           </div>
           <div className=" hidden lg:block gap-1 cursor-pointer text-white">
-            {/* <h1 className="text-2xl font-medium">Bibek Koirala</h1> */}
             <motion.p
               className="text-2xl font-medium"
               style={{
