@@ -4,21 +4,21 @@ export type typeTechStack = {
 };
 
 export const techStack: typeTechStack[] = [
+  { name: "Javascript", img: "javascript.png" },
+  { name: "TypeScript", img: "typescript.png" },
+  { name: "TailwindCSS", img: "tailwindcss.png" },
   { name: "React", img: "react.png" },
   { name: "Next.js", img: "next.png" },
-  { name: "TypeScript", img: "typescript.png" },
-  { name: "Javascript", img: "javascript.png" },
   { name: "Node.js", img: "node.png" },
-  { name: "Python", img: "python.png" },
+  { name: "Nestjs", img: "nestjs.png" },
   { name: "MongoDB", img: "mongo.png" },
   { name: "PostgreSQL", img: "postgres.png" },
+  { name: "Python", img: "python.png" },
   { name: "AWS", img: "aws.png" },
   { name: "Docker", img: "docker.png" },
   { name: "Kubernetes", img: "kubernetes.png" },
   { name: "GraphQL", img: "graphql.png" },
-  { name: "TailwindCSS", img: "tailwindcss.png" },
   { name: "Git", img: "git.png" },
-  { name: "Nestjs", img: "nestjs.png" },
 ];
 
 export type typeExperiences = {
