@@ -12,9 +12,17 @@ export default {
           background: "#F4F4F4", // Light background color
           text: "#333333", // Dark text color for light mode
           muted: "#8A8A8A", // Muted text color
+          fullBackground: "#08020d",
+          mainComponentBackground: "#161616",
+          textPrimary: "#ffffff",
+          textSecondary: "#6b6872",
+          inputBackground: "#272729",
+          inputTextColor: "#cccbd0",
+          inputPlaceHolderColor: "#333436",
         },
         dark: {
           fullBackground: "#08020d",
+          // fullBackground: "#08000",
           mainComponentBackground: "#161616",
           textPrimary: "#ffffff",
           textSecondary: "#6b6872",
