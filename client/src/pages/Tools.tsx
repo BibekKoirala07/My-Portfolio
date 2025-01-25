@@ -12,6 +12,7 @@ const Tools = () => {
               className="relative group 
                          bg-white/5 dark:bg-[#272729] 
                          text-center p-5 
+                         pb-8
                          rounded-2xl 
                          border border-white/10 dark:border-white/5
                          transition-all duration-500 ease-out
@@ -31,13 +32,13 @@ const Tools = () => {
                 <div
                   className="p-4 flex justify-center 
                                 transition-transform duration-500 
-                                group-hover:scale-110 
+                                group-hover:scale-100 
                                 group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]"
                 >
                   <img
                     src={each.img}
                     alt=""
-                    className="w-24 h-24 object-contain"
+                    className="w-16 h-16 object-contain"
                   />
                 </div>
                 <p
