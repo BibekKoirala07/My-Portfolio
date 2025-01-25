@@ -4,9 +4,9 @@ export type typeTechStack = {
 };
 
 export const techStack: typeTechStack[] = [
+  { name: "TailwindCSS", img: "tailwindcss.png" },
   { name: "Javascript", img: "javascript.png" },
   { name: "TypeScript", img: "typescript.png" },
-  { name: "TailwindCSS", img: "tailwindcss.png" },
   { name: "React", img: "react.png" },
   { name: "Next.js", img: "next.png" },
   { name: "Node.js", img: "node.png" },
