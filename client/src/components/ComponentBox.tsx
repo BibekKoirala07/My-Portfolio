@@ -16,7 +16,7 @@ const ComponentBox = ({
     words = description.split(" ");
   }
   return (
-    <ComingFromBottom className="rounded-xl p- sm:p-7 min-h-screen text-white">
+    <ComingFromBottom className="rounded-xl p-2.5 sm:p-7 min-h-screen text-white">
       {header && <h1 className="text-3xl text-center font-bold">{header}</h1>}
       {description && words && (
         <p className="text-center my-4 text-balance">
