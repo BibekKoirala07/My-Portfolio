@@ -11,8 +11,6 @@ import Tools from "./pages/Tools";
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  console.log("set", setIsDarkMode);
-
   document.documentElement.classList.add("dark");
 
   useEffect(() => {
@@ -20,6 +18,7 @@ function App() {
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
+      setIsDarkMode(true);
     } else {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");

@@ -24,11 +24,9 @@ const ContactMe = () => {
         body: JSON.stringify({ username: name, email, message }),
       });
       const data = await response.json();
-      console.log("response", response);
       console.log("data", data);
       setLoading(false);
     } catch (error) {
-      console.log("error", error);
       setLoading(false);
     }
   };
