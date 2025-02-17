@@ -6,7 +6,7 @@ const AboutMeHero = () => {
     <EachAboutMeComponent headerText="About Me">
       <div className="grid gap-3 sm:grid-cols-2 ">
         <motion.div
-          className="sm:col-span-1 flex flex-col justify-center  h-[300px] sm:h-auto space-y-6 "
+          className="sm:col-span-1 h-fit flex flex-col justify-center   sm:h-auto space-y-6 "
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 5 }}
@@ -27,7 +27,7 @@ const AboutMeHero = () => {
 
         <div className="p-10 sm:p-0 relative   flex justify-center">
           <div
-            className="b-[#242424] sm:w-[280px] flex items-center justify-center p-12 sm:p-0 sm:h-[280px] bg-[#363636]"
+            className="bg-[#242424] sm:w-[280px] flex items-center justify-center p-12 sm:p-0 sm:h-[280px] "
             style={{ borderRadius: "3rem" }}
           >
             <img
