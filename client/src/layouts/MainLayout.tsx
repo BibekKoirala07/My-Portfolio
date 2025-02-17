@@ -32,7 +32,6 @@ const MainLayout = () => {
   console.log(`  fixed top-[20px] right-0
           lg:hidden
           h-screen
-
           w-[calc(100%-40px)]
           mx-5
           ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
@@ -103,7 +102,7 @@ const MainLayout = () => {
       </div>
 
       <div className="col-span-3">
-        <div className=" py-5 px-7 dark:bg-dark-mainComponentBackground mb-4 rounded-lg flex justify-between items-center bg-red-500">
+        <div className=" py-5 px-6 dark:bg-dark-mainComponentBackground mb-4 rounded-lg flex justify-between items-center bg-red-500">
           <div
             className="flex  lg:hidden flex-col gap-1 cursor-pointer w-9"
             onClick={() => setSidebarOpen((prevState) => !prevState)}
@@ -160,7 +159,7 @@ const MainLayout = () => {
           </div>
         </div>
         <motion.div
-          className={`text-white rounded-xl dark:bg-dark-mainComponentBackground`}
+          className={`text-white rounded-xl p-1 pb-8 dark:bg-dark-mainComponentBackground`}
           initial={{ opacity: 0, y: 200 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{

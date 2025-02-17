@@ -25,15 +25,15 @@ const AboutMeHero = () => {
           </p>
         </motion.div>
 
-        <div className="p-10 sm:p-0 relative   flex justify-center">
+        <div className="p-1  mt-8 sm:mt-0 sm:p-0 relative flex justify-center">
           <div
-            className="bg-[#242424] sm:w-[280px] flex items-center justify-center p-12 sm:p-0 sm:h-[280px] "
+            className="bg-[#242424] px-7 sm:w-[280px] flex items-center justify-center p-7 sm:p-0 sm:h-[280px] "
             style={{ borderRadius: "3rem" }}
           >
             <img
               src="my_photo_main.jpg"
               alt=""
-              className="sm:w-[200px] sm:h-[200px] object-cover"
+              className="w-full max-w-[200px] sm:max-w-[200px] sm:w-[200px] sm:h-[200px] object-cover"
               style={{ borderRadius: "4em" }}
             />
           </div>

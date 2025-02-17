@@ -116,9 +116,11 @@ const ContactMe = () => {
         </div>
       </form>
 
-      <div className="text-center mt-4">
+      <div className="text-center mt-4 w-full">
         <p>or contact directly at</p>
-        <p>www.koiralabibek2058@gmail.com</p>
+        <p className="whitespace-pre-line break-words">
+          www.koiralabibek2058@gmail.com
+        </p>
       </div>
     </ComponentBox>
   );

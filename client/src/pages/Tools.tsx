@@ -4,7 +4,7 @@ import { techStack, typeTechStack } from "../utils/aboutme";
 const Tools = () => {
   return (
     <ComponentBox>
-      <div className="grid grid-cols-2 sm:grid-cols-3 p-3  lg:grid-cols-4 gap-7">
+      <div className="grid grid-cols-1 sm:grid-cols-3 p-3  lg:grid-cols-4 gap-7">
         {techStack.map((each: typeTechStack, index) => {
           return (
             <div

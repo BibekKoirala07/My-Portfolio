@@ -27,7 +27,7 @@ function App() {
   }, []);
 
   return (
-    <div className="dark:bg-dark-fullBackground min-h-screen">
+    <div className="dark:bg-dark-fullBackground min-h-screen p-0">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>
